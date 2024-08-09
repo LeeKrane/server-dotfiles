@@ -1,0 +1,12 @@
+# Flatpak
+
+add = "flatpak install -y --system #:?"
+remove = "flatpak uninstall #:?"
+upgrade = "flatpak upgrade"
+
+plural_name = "flatpaks"
+
+hook_name = "flatpaks"
+
+[config]
+many_args = true

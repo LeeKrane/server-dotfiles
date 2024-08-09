@@ -1,0 +1,40 @@
+[core]
+	editor = nvim
+	autocrlf = input
+	pager = delta
+
+[user]
+	name = krane
+	email = christian.kranabetter@protonmail.com
+
+[init]
+	defaultBranch = main
+
+[fetch]
+	prune = true
+
+[pull]
+	rebase = true
+
+[alias]
+	st = status -sb
+	co = checkout
+	cm = commit -m
+	ca = commit --amend
+	ll = log --oneline
+	pr = pull --rebase
+	aa = add all
+	dc = diff --cached
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+

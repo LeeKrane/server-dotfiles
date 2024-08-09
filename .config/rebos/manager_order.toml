@@ -1,0 +1,3 @@
+begin = ["system"]
+
+end = ["flatpak", "pip", "npm-global"]

@@ -1,0 +1,28 @@
+# --------------------- #
+#    Generation File    #
+# --------------------- #
+
+# Other generation files to import. (Example: intensive_apps -> ~/.config/rebos/imports/intensive_apps.toml)
+imports = [
+	"apps",
+	"cli",
+	"configuration",
+	"dev",
+	"docker",
+	"essentials",
+	"fonts",
+	"git",
+	"ide",
+]
+
+# Packages to be installed via the native package manager.
+[managers.system]
+items = []
+
+# Packages to be installed via Flatpak.
+[managers.flatpak]
+items = []
+
+# Packages to be installed via Cargo.
+[managers.cargo]
+items = []
