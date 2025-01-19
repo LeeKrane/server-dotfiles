@@ -36,8 +36,6 @@ echo -e "Installing apt packages:${NC}"
 sudo apt-get install -y \
 	fzf \
 	ncdu \
-	exa \
-	bat \
 	ripgrep \
 	mc \
 	btop \
