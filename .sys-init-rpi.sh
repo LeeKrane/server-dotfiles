@@ -11,7 +11,7 @@ echo
 
 # initial programs
 echo -e "${BLUE}Installing initial programs needed for system setup:${NC}"
-sudo apt-get install -y stow cargo
+sudo apt-get install -y stow
 echo
 echo
 
@@ -31,18 +31,54 @@ echo
 echo
 
 # rebos for remaining programs
-echo -e "${BLUE}Installing Rebos for the remaining system packages:${NC}"
-cargo install rebos
-echo "export PATH='/home/$USER/.cargo/bin/:$PATH'" >.krane-rc/bash/local-paths
-echo "path=('/home/$USER/.cargo/bin/' '/home/$USER/.local/bin/' $path)" >.krane-rc/zsh/local-paths
-echo "export PATH" >>.krane-rc/zsh/local-paths
-source ~/.bashrc
+echo -e "${BLUE}Installing remaining packages..."
 echo
-echo -e "${BLUE}Installing the remaining system packages via Rebos:${NC}"
-rebos setup
-rebos config init
-rebos gen commit "[sys-init] automatic initial base system configuration"
-rebos gen current build
+echo -e "Installing apt packages:${NC}"
+sudo apt-get install -y \
+	fzf \
+	ncdu \
+	exa \
+	bat \
+	ripgrep \
+	zoxide \
+	mc \
+	btop \
+	tldr \
+	thefuck \
+	fastfetch \
+	wireguard-tools \
+	snapper \
+	nodejs \
+	python3-pip \
+	docker-ce \
+	docker-ce-cli \
+	containerd.io \
+	docker-buildx-plugin \
+	docker-compose-plugin \
+	cargo \
+	zsh \
+	git \
+	gitleaks \
+	git-delta \
+	neovim
+
+echo -e "${BLUE}Installing cargo packages:${NC}"
+cargo install \
+	du-dust
+
+echo
+echo -e "${BLUE}Installing pip packages:${NC}"
+pip install \
+	toml \
+	pre-commit
+
+echo
+echo -e "${BLUE}Installing npm packages:${NC}"
+sudo npm install -g \
+	bun \
+	yarn \
+	pnpm
+
 echo
 echo
 echo -e "${BLUE}Changing default shell to zsh and installing oh-my-zsh...${NC}"
