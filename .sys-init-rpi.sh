@@ -67,8 +67,7 @@ cargo install \
 echo
 echo -e "${BLUE}Installing pip packages:${NC}"
 pip install \
-	toml \
-	pre-commit
+	toml
 
 echo
 echo -e "${BLUE}Installing npm packages:${NC}"
