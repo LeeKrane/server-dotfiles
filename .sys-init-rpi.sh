@@ -61,8 +61,8 @@ sudo apt-get install -y \
 
 echo
 echo -e "${BLUE}Installing pip packages:${NC}"
-pip install \
-	toml
+sudo apt-get install -y \
+	python3-toml
 
 echo
 echo -e "${BLUE}Installing npm packages:${NC}"
