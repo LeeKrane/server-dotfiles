@@ -58,8 +58,6 @@ sudo apt-get install -y \
 	cargo \
 	zsh \
 	git \
-	gitleaks \
-	git-delta \
 	neovim
 
 echo -e "${BLUE}Installing cargo packages:${NC}"
