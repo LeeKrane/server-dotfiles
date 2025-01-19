@@ -1,6 +1,7 @@
 [managers.system]
 items = [
 	"nodejs", # javascript runtime
+	"python3-pip",
 ]
 
 [managers.pip]
