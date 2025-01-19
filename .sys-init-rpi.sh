@@ -55,14 +55,9 @@ sudo apt-get install -y \
 	containerd.io \
 	docker-buildx-plugin \
 	docker-compose-plugin \
-	cargo \
 	zsh \
 	git \
 	neovim
-
-echo -e "${BLUE}Installing cargo packages:${NC}"
-cargo install \
-	du-dust
 
 echo
 echo -e "${BLUE}Installing pip packages:${NC}"
