@@ -45,7 +45,7 @@ sudo apt-get install -y \
 	btop \
 	tldr \
 	thefuck \
-	fastfetch \
+	neofetch \
 	wireguard-tools \
 	snapper \
 	nodejs \
