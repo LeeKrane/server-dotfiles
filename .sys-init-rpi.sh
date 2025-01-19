@@ -25,7 +25,6 @@ echo -e "${BLUE}Linking your dotfiles via stow...${NC}"
 cd ~/.server-dotfiles
 stow --adopt .
 git reset --hard
-source ~/.bashrc
 cd
 echo
 echo
