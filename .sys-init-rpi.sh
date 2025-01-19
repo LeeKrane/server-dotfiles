@@ -11,7 +11,7 @@ echo
 
 # initial programs
 echo -e "${BLUE}Installing initial programs needed for system setup:${NC}"
-sudo dnf -y install stow cargo
+sudo apt-get install -y stow cargo
 echo
 echo
 
@@ -27,24 +27,6 @@ stow --adopt .
 git reset --hard
 source ~/.bashrc
 cd
-echo
-echo
-
-# important repositories and keys for rebos
-echo -e "${BLUE}Adding needed dnf repositories, copr repositories and rpm keys:${NC}"
-# terra
-sudo dnf -y config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-sudo dnf -y --refresh upgrade
-sudo dnf -y install terra-release
-
-# docker
-sudo dnf -y config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf -y --refresh upgrade
-#sudo usermod -a -G docker krane
-
-# lazygit
-sudo dnf -y copr enable atim/lazygit
-
 echo
 echo
 
@@ -76,7 +58,7 @@ echo
 echo
 echo -e "${BLUE}Replacing automatically overwritten .zshrc file with that from dotfiles...${NC}"
 rm $HOME/.zshrc
-cd $HOME/.dotfiles/
+cd $HOME/.server-dotfiles/
 stow .
 echo
 echo
