@@ -73,6 +73,8 @@ sudo npm install -g \
 
 echo
 echo
+
+# ZSH and BASH config
 echo -e "${BLUE}Changing default shell to zsh and installing oh-my-zsh...${NC}"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo
@@ -88,6 +90,8 @@ sudo git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/p
 echo
 echo
 echo -e "${BLUE}Replacing automatically overwritten .zshrc file with that from dotfiles...${NC}"
+touch $HOME/.server-dotfiles/.krane-rc/bash/local-paths
+touch $HOME/.server-dotfiles/.krane-rc/zsh/local-paths
 rm $HOME/.zshrc
 cd $HOME/.server-dotfiles/
 stow .
