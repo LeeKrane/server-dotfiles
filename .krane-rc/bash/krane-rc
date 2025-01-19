@@ -1,4 +1,3 @@
-eval "$(zoxide init bash)"
 eval $(thefuck --alias)
 
 
