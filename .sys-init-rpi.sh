@@ -39,7 +39,6 @@ sudo apt-get install -y \
 	exa \
 	bat \
 	ripgrep \
-	zoxide \
 	mc \
 	btop \
 	tldr \
