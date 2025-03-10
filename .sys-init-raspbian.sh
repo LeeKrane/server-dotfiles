@@ -297,7 +297,7 @@ if [[ "$resProgramInstall" == "y" ]]; then
 		\"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
 		\$(. /etc/os-release && echo \"\$VERSION_CODENAME\") stable\" | \
 		sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
-	execute sudo apt-get update
+	execute "sudo apt-get update"
 	echo
 	echo -e "${BLUE}Uninstalling old docker:${NC}"
 	execute "sudo apt-get remove -y \
