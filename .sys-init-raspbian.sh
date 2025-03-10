@@ -280,12 +280,26 @@ else
 	echo -e "${GREEN}Skipped dotfiles linking.${NC}"
 fi
 
-# remaining program install via rebos
+# remaining program install
 if [[ "$resProgramInstall" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Installing the remaining system packages:"
 	echo
-	echo -e "Uninstalling old docker:${NC}"
+	echo -e "Updating system:${NC}"
+	execute "sudo apt-get update"
+	execute "sudo apt-get upgrade -y"
+	echo
+	echo -e "${BLUE}Adding docker repository:${NC}"
+	execute "sudo install -m 0755 -d /etc/apt/keyrings"
+	execute "sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc"
+	execute "sudo chmod a+r /etc/apt/keyrings/docker.asc"
+	execute "echo \
+		\"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+		\$(. /etc/os-release && echo \"\$VERSION_CODENAME\") stable\" | \
+		sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
+	execute sudo apt-get update
+	echo
+	echo -e "${BLUE}Uninstalling old docker:${NC}"
 	execute "sudo apt-get remove -y \
 		docker.io \
 		docker-doc \
@@ -294,7 +308,7 @@ if [[ "$resProgramInstall" == "y" ]]; then
 		containerd \
 		runc"
 	echo
-	echo -e "Installing apt packages:${NC}"
+	echo -e "${BLUE}Installing apt packages:${NC}"
 	execute "sudo apt-get install -y \
 		fzf \
 		ncdu \
