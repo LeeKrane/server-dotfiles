@@ -285,6 +285,15 @@ if [[ "$resProgramInstall" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Installing the remaining system packages:"
 	echo
+	echo -e "Uninstalling old docker:${NC}"
+	execute "sudo apt-get remove -y \
+		docker.io \
+		docker-doc \
+		docker-compose \
+		podman-docker \
+		containerd \
+		runc"
+	echo
 	echo -e "Installing apt packages:${NC}"
 	execute "sudo apt-get install -y \
 		fzf \
