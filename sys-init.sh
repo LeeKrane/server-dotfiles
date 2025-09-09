@@ -277,6 +277,7 @@ if [[ "$resInitPrograms" == "y" ]]; then
 	if [[ "$OS_TYPE" == "fedora" ]]; then
 		execute "sudo dnf -y install stow cargo"
 	elif [[ "$OS_TYPE" == "debian" ]]; then
+		execute "sudo apt-get update"
 		execute "sudo apt-get -y install stow cargo"
 	fi
 	echo
