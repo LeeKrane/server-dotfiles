@@ -14,6 +14,8 @@ After cloning, run the initialization script:
 
 ```bash
 cd $HOME/.server-dotfiles
+```
+```bash
 ./sys-init.sh
 ```
 
