@@ -275,9 +275,9 @@ if [[ "$resInitPrograms" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Installing initial programs needed for system setup:${NC}"
 	if [[ "$OS_TYPE" == "fedora" ]]; then
-		execute "sudo dnf -y install stow"
+		execute "sudo dnf -y install stow cargo"
 	elif [[ "$OS_TYPE" == "debian" ]]; then
-		execute "sudo apt-get -y install stow"
+		execute "sudo apt-get -y install stow cargo"
 	fi
 	echo
 else
@@ -331,7 +331,6 @@ if [[ "$resProgramInstall" == "y" ]]; then
 		execute "sudo dnf install -y \
 			fzf \
 			ncdu \
-			exa \
 			bat \
 			ripgrep \
 			zoxide \
@@ -355,6 +354,10 @@ if [[ "$resProgramInstall" == "y" ]]; then
 			gitleaks \
 			git-delta \
 			neovim"
+		echo
+		echo -e "${BLUE}Adding cargo bin to PATH and installing cargo packages:${NC}"
+		execute "cargo install eza"
+		execute "echo \"export PATH='$HOME/.cargo/bin/:$PATH'\" > $HOME/.server-dotfiles/.krane-rc/bash/local-paths"
 		echo
 		echo -e "${BLUE}Installing pip packages:${NC}"
 		execute "sudo dnf install -y \
