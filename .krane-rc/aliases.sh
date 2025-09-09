@@ -5,21 +5,28 @@ if [[ "$OS_TYPE" == "nobara" ]]; then
 fi
 
 alias c='clear'
-alias ls='exa -h'
-alias ll='exa -lh'
-alias la='exa -ah'
-alias lla='exa -lah'
-alias tree='exa --tree'
 alias nv='nvim'
 alias htop='btop'
 alias top='btop'
 
 # fedora specific
 if [[ "$OS_TYPE" == "fedora" ]]; then
+	alias ls='eza -h'
+	alias ll='eza -lh'
+	alias la='eza -ah'
+	alias lla='eza -lah'
+	alias tree='eza --tree'
 	alias cat='bat --color=always'
 	alias cd='z'
 	alias zz='z -'
 	alias lg='lazygit'
+# debian specific
+elif [[ "$OS_TYPE" == "debian" ]]; then
+	alias ls='exa -h'
+	alias ll='exa -lh'
+	alias la='exa -ah'
+	alias lla='exa -lah'
+	alias tree='exa --tree'
 fi
 
 # fzf
