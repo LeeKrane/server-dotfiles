@@ -469,7 +469,8 @@ if [[ "$resSSHKey" == "y" ]]; then
 	echo
 	echo -e "${BLUE}SSH key generated successfully!${NC}"
 	echo -e "${BLUE}Public key location: ${GREEN}$HOME/.ssh/id_rsa.pub${NC}"
-	echo -e "${BLUE}To display your public key, run: ${GREEN}cat $HOME/.ssh/id_rsa.pub${NC}"
+	echo
+	execute "cat $HOME/.ssh/id_rsa.pub"
 	echo
 else
 	echo -e "${GREEN}Skipped SSH key generation.${NC}"
