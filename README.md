@@ -10,6 +10,12 @@ Clone this repository as ".server-dotfiles" to your home directory:
 git clone https://github.com/LeeKrane/server-dotfiles.git $HOME/.server-dotfiles
 ```
 
+or
+
+```bash
+git clone git@github.com:LeeKrane/server-dotfiles.git $HOME/.server-dotfiles
+```
+
 After cloning, run the initialization script:
 
 ```bash
