@@ -426,9 +426,9 @@ if [[ "$resZshPlugins" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Installing oh-my-zsh plugins...${NC}"
 	execute "cd"
-	execute "sudo rm -rf $ZSH_CUSTOM/plugins/zsh-autosuggestions && sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions"
-	execute "sudo rm -rf $ZSH_CUSTOM/plugins/zsh-syntax-highlighting && sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-	execute "sudo rm -rf $ZSH_CUSTOM/themes/powerlevel10k && sudo git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k"
+	execute "sudo rm -rf $HOME/.oh-my-zsh/plugins/zsh-autosuggestions && sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/plugins/zsh-autosuggestions"
+	execute "sudo rm -rf $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting && sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting"
+	execute "sudo rm -rf $HOME/.oh-my-zsh/themes/powerlevel10k && sudo git clone https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/themes/powerlevel10k"
 	echo
 else
 	echo -e "${GREEN}Skipped ZSH install.${NC}"
