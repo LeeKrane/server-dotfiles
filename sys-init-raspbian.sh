@@ -272,7 +272,11 @@ execute_non_verbose() {
 if [[ "$resInitPrograms" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Installing initial programs needed for system setup:${NC}"
-	execute "sudo apt-get -y install stow"
+	if [[ "$OS_TYPE" == "fedora" ]]; then
+    execute "sudo dnf -y install stow"
+  elif [[ "$OS_TYPE" == "debian" ]]; then
+    execute "sudo apt-get -y install stow"
+  fi
 	echo
 else
 	echo -e "${GREEN}Skipped initial program installation.${NC}"
@@ -302,54 +306,101 @@ if [[ "$resProgramInstall" == "y" ]]; then
 	echo -e "${BLUE}Installing the remaining system packages:"
 	echo
 	echo -e "Updating system:${NC}"
-	execute "sudo apt-get update"
-	execute "sudo apt-get upgrade -y"
-	echo
-	echo -e "${BLUE}Adding docker repository:${NC}"
-	execute "sudo install -m 0755 -d /etc/apt/keyrings"
-	execute "sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc"
-	execute "sudo chmod a+r /etc/apt/keyrings/docker.asc"
-	execute "echo \
-		\"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
-		\$(. /etc/os-release && echo \"\$VERSION_CODENAME\") stable\" | \
-		sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
-	execute "sudo apt-get update"
-	echo
-	echo -e "${BLUE}Uninstalling old docker:${NC}"
-	execute "sudo apt-get remove -y \
-		docker.io \
-		docker-doc \
-		docker-compose \
-		podman-docker \
-		containerd \
-		runc"
-	echo
-	echo -e "${BLUE}Installing apt packages:${NC}"
-	execute "sudo apt-get install -y \
-		fzf \
-		ncdu \
-		ripgrep \
-		mc \
-		btop \
-		tldr \
-		thefuck \
-		neofetch \
-		wireguard-tools \
-		snapper \
-		nodejs \
-		python3-pip \
-		docker-ce \
-		docker-ce-cli \
-		containerd.io \
-		docker-buildx-plugin \
-		docker-compose-plugin \
-		zsh \
-		git \
-		neovim"
-	echo
-	echo -e "${BLUE}Installing pip packages:${NC}"
-	execute "sudo apt-get install -y \
-		python3-toml"
+	if [[ "$OS_TYPE" == "fedora" ]]; then
+    execute "sudo dnf update -y"
+    echo
+    echo -e "${BLUE}Adding docker repository:${NC}"
+    execute "sudo dnf -y install dnf-plugins-core"
+    execute "sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo"
+    echo
+    echo -e "${BLUE}Uninstalling old docker:${NC}"
+    execute "sudo dnf remove docker \
+      docker-client \
+      docker-client-latest \
+      docker-common \
+      docker-latest \
+      docker-latest-logrotate \
+      docker-logrotate \
+      docker-selinux \
+      docker-engine-selinux \
+      docker-engine"
+    echo
+    echo -e "${BLUE}Installing dnf packages:${NC}"
+    execute "sudo dnf install -y \
+      fzf \
+      ncdu \
+      ripgrep \
+      mc \
+      btop \
+      tldr \
+      thefuck \
+      neofetch \
+      wireguard-tools \
+      snapper \
+      nodejs \
+      python3-pip \
+      docker-ce \
+      docker-ce-cli \
+      containerd.io \
+      docker-buildx-plugin \
+      docker-compose-plugin \
+      zsh \
+      git \
+      neovim"
+    echo
+    echo -e "${BLUE}Installing pip packages:${NC}"
+    execute "sudo dnf install -y \
+      python3-toml"
+  elif [[ "$OS_TYPE" == "debian" ]]; then
+    execute "sudo apt-get update"
+    execute "sudo apt-get upgrade -y"
+    echo
+    echo -e "${BLUE}Adding docker repository:${NC}"
+    execute "sudo install -m 0755 -d /etc/apt/keyrings"
+    execute "sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc"
+    execute "sudo chmod a+r /etc/apt/keyrings/docker.asc"
+    execute "echo \
+      \"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+      \$(. /etc/os-release && echo \"\$VERSION_CODENAME\") stable\" | \
+      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
+    execute "sudo apt-get update"
+    echo
+    echo -e "${BLUE}Uninstalling old docker:${NC}"
+    execute "sudo apt-get remove -y \
+      docker.io \
+      docker-doc \
+      docker-compose \
+      podman-docker \
+      containerd \
+      runc"
+    echo
+    echo -e "${BLUE}Installing apt packages:${NC}"
+    execute "sudo apt-get install -y \
+      fzf \
+      ncdu \
+      ripgrep \
+      mc \
+      btop \
+      tldr \
+      thefuck \
+      neofetch \
+      wireguard-tools \
+      snapper \
+      nodejs \
+      python3-pip \
+      docker-ce \
+      docker-ce-cli \
+      containerd.io \
+      docker-buildx-plugin \
+      docker-compose-plugin \
+      zsh \
+      git \
+      neovim"
+    echo
+    echo -e "${BLUE}Installing pip packages:${NC}"
+    execute "sudo apt-get install -y \
+      python3-toml"
+  fi
 	echo
 	echo -e "${BLUE}Installing npm packages:${NC}"
 	execute "sudo npm install -g \
