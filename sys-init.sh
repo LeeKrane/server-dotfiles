@@ -146,6 +146,7 @@ declare -A prompts=(
 	[resProgramInstall]="Install all programs?"
 	[resZshInstall]="Install ZSH?"
 	[resZshPlugins]="Install ZSH plugins?"
+	[resSSHKey]="Generate SSH key (RSA 4096)?"
 )
 
 # Define an ordered list of keys
@@ -155,6 +156,7 @@ ordered_keys=(
 	resProgramInstall
 	resZshInstall
 	resZshPlugins
+	resSSHKey
 )
 
 # --------------------------------------------------------------------------------------------------
@@ -447,6 +449,19 @@ if [[ "$resZshInstall" == "y" ]] || [[ "$resZshPlugins" == "y" ]]; then
 	echo
 else
 	echo -e "${GREEN}Skipped .zshrc fixup.${NC}"
+fi
+
+if [[ "$resSSHKey" == "y" ]]; then
+	echo
+	echo -e "${BLUE}Generating SSH key (RSA 4096)...${NC}"
+	execute "ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/id_rsa -N \"\""
+	echo
+	echo -e "${BLUE}SSH key generated successfully!${NC}"
+	echo -e "${BLUE}Public key location: ${GREEN}$HOME/.ssh/id_rsa.pub${NC}"
+	echo -e "${BLUE}To display your public key, run: ${GREEN}cat $HOME/.ssh/id_rsa.pub${NC}"
+	echo
+else
+	echo -e "${GREEN}Skipped SSH key generation.${NC}"
 fi
 
 echo
