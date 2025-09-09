@@ -370,7 +370,9 @@ fi
 if [[ "$resZshInstall" == "y" ]] || [[ "$resZshPlugins" == "y" ]]; then
 	echo
 	echo -e "${BLUE}Replacing automatically overwritten .zshrc file with that from dotfiles...${NC}"
+	execute "touch $HOME/.server-dotfiles/.krane-rc/bash/local-vars"
 	execute "touch $HOME/.server-dotfiles/.krane-rc/bash/local-paths"
+	execute "touch $HOME/.server-dotfiles/.krane-rc/zsh/local-vars"
 	execute "touch $HOME/.server-dotfiles/.krane-rc/zsh/local-paths"
 	execute "rm $HOME/.zshrc"
 	execute "cd $HOME/.server-dotfiles/"
@@ -382,4 +384,3 @@ fi
 
 echo
 echo -e "Exiting...${NC}"
-
