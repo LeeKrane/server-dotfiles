@@ -1,5 +1,17 @@
+########################################
+######           Servers           #####
+########################################
+
+# krane@taronychus
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/k0+KXj4rVG3vB/dhqqvcylR+aiYuN0msHNLZd7j8JxKINSp3Qq48pVcY0JIfejZM7CDmUCfV/vUA0FsmnK4ooCZEdLTz0nwK4S2UfDBf5CzK9Od1tX3rtPj6050Km8K0Z13J7eOBtxBoDDM75XH/IgPSvjqhM2+XFHC7GkmV2Zc/R2Dg0ew14m19Uz7gdpPFWdOm7Nryn15DuZdcY1h8us3HROxyOhqxtPMTkAOHlMTNF/4+jQcl3f+y3a4N0RdQgWpAOmk3IImPDiLQtgyM31B42GWFhs2QUQxd96jbbwD+bi6sIR76QFdXQBIsGGYj9dP6VZwS2xtih+z5CYZFKBsO1W1w0xxgUXHQ12KYgqhKRPu0BoaF0GK2HAFBBML+T7jbavvHLbJ0OgGIxssO06Czs8FHx3jg/SiGxoSzoivXa/l7rO5WDb80c/g3rCKakPY+Q/v3qb5EmefMdRTVyg26+eqiGF1i21pULDp+aXdt3v29WuHz9I7uLFWSVY42hF9lv3pVqBt+beITm+sFf4bsMSSd38amEAbHzQ74sOvKLIbLm7HdrziK/KvjERXWMpbIdyK01bgTvvbutkEVEDB5ucQZOFZ6zF6xtekDh+BaIJlR2mlYWwljW2lRLA2runFVCTIK+lf1yeqF22vVRAE+FrcH6mjjvodGdDWgAQ== krane@taronychus
+
+########################################
+######           Devices           #####
+########################################
+
 # krane@tarodactyl
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuLoJnyiuZZHXBzNvyH10sSO2X29+9Htoep5tZL7sRcnQpev+TdZ6dvf6yq/v0VnRSdsIDRz5KJF1pY6x4AHPbGFrumWgnBB8OMyWxqBREbROFRLFyXf7lFF6Ojr1aLP70knZH2Lv0Dz+q7SXhIPTiHtwzJJFQfrPV3lAA0Hmfu6AdOaFgKygVFg53g1ASoyUtK9Mz4/IlRaY9/iHV/aWTWHPM0+XpjhNR1/sLwXngkYgW6qFYYUbMhfy9oenQc6FvIP/r8a9oj3ji8iSsTecpVgJIBJ+17HTQN+4bcWL1qgchvLEJlRvvauB7+4ByEZ77RjBbKKUiKOqYMU4LIxSqhQUufXGpyA9mQwaQjy0YubBi6vmLYP20FkPdHD0n1vVbKVQBFO1Txgg4HRSHMMyHjtCJPTbannSYolAW7gtXoztGGFme3qdMntHhyfuBPXeSkpAt2TOeTvjg4JFJBhGNgQOIDNUCpLXobPNWNsTd/L78nwUGCMu2yLwg96REJvDmAHBDKJ0xJLUc9E4f2lJY/E5mUJE/PTFIgoNfVPj95RWRsvjTjL6nGLNVDer68g4mCnr6uUhiaPukz1jR6BuDxcFqdW0mYIPPtRuF8pgtzQTwJGKwhsnwjXgXn711jNat3nuPJt5YmvkPdB9zmMZ0dulVmIeBeVFNmNZEUwZf7w== krane@tarodactyl
 
 # krane@taryonyx
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/tFrVvBqHAJHf3ijqJZ3NSRYH0t9gOp0wVWaZgb0cEdhqM5Xof0FLnKFhuCYVYF1MLji8VsB/bYiUMBMiyEHLMRsS9uFFrcUqeL2NyxJUxqEGRiJupzbf0tHGUiZBglthOMHlkE+9qeVkEOihlzSsmaqf+PKRW8WrF1Ra2AUQO9cA6q5kOewCpfu+pa6dMeyoeqD7so8QUjzDRgPAz78Oi/7gUvDvpW8XjlCJX2+d4G4F/pFKrLGVLJCc5ZwzzopPnFbpJT8vlKjkthZagQBDJ1Cua05kzvps36st0fP+eOZGxKZhawObLngCTnyFZ2ZzCy14JMNbpuRAL64rkOcT6CjwGRU1MFQf+UYvAFJ9toRl8k1j2afBvR5DGdVMr2o/2cdbrP3H4WExtvh//xj0ppxD7gEeov5i4+qSu8x3Ef1VAh/xjBbYyloIHMqAq+CGqn76bD9QloWxlI2Aa6UeHFtLEsWR9Bd/Se1nOgtI0vcHpvHtLWMJ9Gds8ho/8lMq3GB1yf43PaJc5DvZ08vDlNAXdw3gnFjd6IpotpGzeMSNuSvkFrE/xTMhvsBiuX7Y10bzcPXGbsLs14Q43BQ4sr/IXub2ZeV8fCm+AC+ZZZP3j+lLYAnnT3RzaCMYJxfeEws5pUdqVxMGIfQU6uhxTrpkLOesRXG6GNdt0fNVFQ==
+
