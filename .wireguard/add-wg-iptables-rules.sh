@@ -7,5 +7,3 @@ iptables -A FORWARD -i wg0 -j ACCEPT
 iptables -A FORWARD -o wg0 -j ACCEPT
 # Allow all incoming traffic on the WireGuard interface (wg0) to the server itself
 iptables -A INPUT -i wg0 -j ACCEPT
-# Enable NAT (Masquerading) for traffic exiting the public interface (eth0)
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
