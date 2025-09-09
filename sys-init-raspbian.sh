@@ -169,13 +169,29 @@ if $dry_run; then
 	echo
 fi
 
+# Determine OS type
+OS_TYPE=$(grep -w "ID" /etc/os-release | cut -d "=" -f 2 | tr -d '"')
+if [[ "$OS_TYPE" == "nobara" ]]; then
+	OS_TYPE="fedora"
+fi
+
+# Check if OS_TYPE is supported
+SUPPORTED_OS_TYPES=("fedora" "debian")
+
+if [[ ! " ${SUPPORTED_OS_TYPES[@]} " =~ " ${OS_TYPE} " ]]; then
+	echo -e "${RED}Unsupported OS type: $OS_TYPE${NC}"
+	echo -e "${RED}This script currently only supports the following OS types: ${SUPPORTED_OS_TYPES[*]}${NC}"
+	exit 1
+fi
+
 # Save current terminal settings
 OLD_SETTINGS=$(stty -g)
 
 echo -e "${BLUE}Always clone the dotfiles repository as ~/.dotfiles"
 echo -e "Run this script without sudo. Rebos won't work if this script is run as sudo.${NC}"
 echo
-
+echo -e "${BLUE}Detected OS: ${GREEN}${OS_TYPE}${NC}"
+echo
 echo -e "${BLUE}Press ${GREEN}Enter${BLUE} to confirm or ${GREEN}q${BLUE} to quit:${NC}"
 echo
 
